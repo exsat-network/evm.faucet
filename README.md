@@ -6,6 +6,11 @@
 $ npm install --save-exact react@rc react-dom@rc
 $ npm install
 $ npm run dev
+
+
+or
+
+pm2 start yarn --name "evm_faucet" --interpreter bash -- start 
 ```
 
 ## Features

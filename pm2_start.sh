@@ -1,0 +1,1 @@
+pm2 start yarn --name "evm_faucet" --interpreter bash -- start
