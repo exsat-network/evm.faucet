@@ -3,22 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 7777",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p 7777"
   },
   "dependencies": {
     "@chakra-ui/icons": "latest",
-    "@chakra-ui/react": "2.x",
-    "@emotion/react": "11.x",
-    "@emotion/styled": "11.x",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "@wharfkit/session": "latest",
     "@wharfkit/wallet-plugin-privatekey": "latest",
     "dayjs": "1.x",
+    "framer-motion": "^11.3.12",
     "nextjs-google-analytics": "latest",
-    "react": "latest",
-    "react-dom": "latest",
+    "react": "19.0.0-canary-fd0da3eef-20240404",
+    "react-dom": "19.0.0-canary-fd0da3eef-20240404",
     "recoil": "latest",
+    "sass": "^1.77.8",
     "swr": "latest"
   },
   "devDependencies": {

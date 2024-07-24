@@ -4,15 +4,15 @@ import { PropsWithChildren, useState } from "react";
 import { sanitizeAddress } from "../api/utils";
 import { useSWRConfig } from "swr"
 import { timeout } from "../api/utils";
-import { useRecoilValue } from "recoil";
-import { chainState } from "../atoms";
+// import { useRecoilValue } from "recoil";
+// import { chainState } from "../atoms";
 
 type SendButtonProps = {
   walletAddress: string;
 };
 
 export const SendButton = (props: PropsWithChildren<SendButtonProps>) => {
-  const chain = useRecoilValue(chainState);
+  const chain = "testnet3";
   const { walletAddress } = props;
   const toast = useToast();
   const [isLoading, setLoading] = useState(false);
@@ -22,7 +22,13 @@ export const SendButton = (props: PropsWithChildren<SendButtonProps>) => {
     if ( isLoading ) return;
     setLoading(true);
     try {
-      const response = await fetch("/api/send", {body: JSON.stringify({to: walletAddress, chain}), method: "POST"})
+      const response = await fetch("/api/send", {
+        body: JSON.stringify({
+          to: walletAddress,
+          chain
+        }),
+        method: "POST",
+      });
       if (!response.ok) {
         throw new Error(await response.text());
       }
