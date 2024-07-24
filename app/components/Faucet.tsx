@@ -38,9 +38,9 @@ export const Faucet = () => {
   const [walletAddress, setWalletAddress] = useState("");
   const placeholder = "0x...."
 
-  useEffect(() => {
-    setWalletAddress(localStorage.getItem("walletAddress") || "");
-  }, []);
+  // useEffect(() => {
+  //   setWalletAddress(localStorage.getItem("walletAddress") || "");
+  // }, []);
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     const walletAddress = e.target.value;
@@ -157,7 +157,7 @@ console.log("API Response:", data);
           )}
         </>
       )}
-      <HistoryRate />
+      
     </Box>
     </>
   );
