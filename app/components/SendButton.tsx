@@ -50,8 +50,8 @@ export const SendButton = (props: PropsWithChildren<SendButtonProps>) => {
 
   return (
     <Button
-      backgroundColor="#3E65C2"
-      color="rgb(42, 49, 49)"
+      backgroundColor="#FF9900"
+      color="#F5F5F5"
       _hover={{
         backgroundColor: "#FFFFFF",
       }}

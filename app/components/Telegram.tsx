@@ -11,7 +11,7 @@ export const Telegram = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Image alt="Telegram" src="/telegram.svg" width={30} height={30} />
+      <Image alt="Telegram" src="/telegram-dark.svg" width={30} height={30} />
     </Link>
   </Box>
 )
