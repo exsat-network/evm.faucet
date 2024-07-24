@@ -36,14 +36,14 @@ export const Faucet = () => {
     >
       <Image alt={"logo"} src="/logo.png" height={150} width={150} />
       <Text fontSize="2xl" marginTop="15px" fontWeight="800" color="#FFFFF">
-        Quickly send a $EOS to your wallet.
+        Quickly send a $BTC to your wallet.
       </Text>
       <Text fontSize="1xl" color="#FFFFF" fontWeight="500">
         This tool does not send&nbsp;
         <Text as="span" fontWeight="bold">
-          real $EOS.
+          real $BTC.
         </Text>
-        &nbsp; It is a testnet faucet for the EOS EVM blockchain.
+        &nbsp; It is a testnet faucet for the exSat EVM blockchain.
       </Text>
       <Stack marginTop="20px" maxWidth="2xl" width="100%">
         <Input

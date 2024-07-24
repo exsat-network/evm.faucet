@@ -26,13 +26,13 @@ export async function get_stats(limit = 2) {
 }
 
 export async function get_balance(address: string, chain: string) {
-    if ( address.length <= 12 ) return get_balance_eos(address, chain);
+    if ( address.length <= 12 ) return get_balance_native(address, chain);
     return get_balance_evm(address);
 }
 
-export async function get_balance_eos(address: string, chain: string) {
+export async function get_balance_native(address: string, chain: string) {
     const rpc = rpcs(chain);
-    const response = await rpc.v1.chain.get_currency_balance("eosio.token", address, "EOS");
+    const response = await rpc.v1.chain.get_currency_balance("btc.xsat", address, "BTC");
     if ( !response.length ) return 0.0
     return response[0].value;
 }
@@ -41,8 +41,8 @@ export async function get_balance_evm(address: any) {
     const rpc = rpcs(CHAIN_DEFAULT);
     address = address.replace("0x", "");
     const response = await rpc.v1.chain.get_table_rows({
-        code: "eosio.evm",
-        scope: "eosio.evm",
+        code: "evm.xsat",
+        scope: "evm.xsat",
         table: "account",
         index_position: "secondary",
         lower_bound: address,

@@ -1,9 +1,9 @@
 import './globals.css'
 
 export const metadata = {
-    title: 'EOS EVM: Get Free Balance on the EOS EVM Network Testnet',
-    description: 'EOS EVM provides free balance on the EOS network in testnet. We offer balance to allow our users to test and develop on the EOS network more.',
-    keywords: 'EOS, EVM, faucet, testnet, balance, free, EOS',
+    title: 'exSat EVM: Get Free Balance on the exSat EVM Network Testnet',
+    description: 'exSat EVM provides free balance on the exSat network in testnet. We offer balance to allow our users to test and develop on the exSat network more.',
+    keywords: 'exSat, EVM, faucet, testnet, balance, free, exSat',
 }
 
 export default function RootLayout({

@@ -1,22 +1,17 @@
-export const ACTOR = process.env.ACTOR ?? 'eosio.faucet';
+export const ACTOR = process.env.ACTOR ?? 'faucet.xsat';
 export const ACCOUNT = process.env.ACCOUNT ?? ACTOR;
-export const EVM = 'eosio.evm';
-export const FAUCET = 'eosio.faucet';
+export const EVM = 'evm.xsat';
+export const FAUCET = 'faucet.xsat';
 export const PERMISSION = process.env.PERMISSION ?? 'active';
 export const BROADCAST = Boolean(process.env.BROADCAST ?? 'true');
 
 export const CHAINS = {
-    jungle4: {
-        id: '73e4385a2708e6d7048834fbc1079f2fabb17b3c125b146af438971e90716c4d',
-        url: 'https://jungle4.api.eosnation.io',
-        explorer: 'https://jungle4.eosq.eosnation.io',
+    testnet3: {
+        id: '20d14b6e421fe21ef1f39061e70f214d5d908b979f379a4feea04294944ddd92',
+        url: 'https://chain-tst3.exactsat.io',
+        explorer: 'https://scan.exactsat.io/',
     },
-    // kylin: {
-    //     id: '5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
-    //     url: 'https://kylin.api.eosnation.io',
-    //     explorer: 'https://kylin.eosq.eosnation.io',
-    // }
 }
-export const CHAIN_DEFAULT = "jungle4";
+export const CHAIN_DEFAULT = "testnet3";
 export const CHAIN_ID = CHAINS[CHAIN_DEFAULT].id;
 export const CHAIN_URL = CHAINS[CHAIN_DEFAULT].url;

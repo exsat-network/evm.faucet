@@ -28,7 +28,7 @@ export const SendButton = (props: PropsWithChildren<SendButtonProps>) => {
       }
       toast({
         title: "Success",
-        description: `EOS sent to ${sanitizeAddress(walletAddress)}`,
+        description: `BTC sent to ${sanitizeAddress(walletAddress)}`,
         status: "success",
         duration: 4000,
         isClosable: true

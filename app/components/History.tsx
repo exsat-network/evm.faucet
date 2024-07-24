@@ -44,7 +44,7 @@ export const TransferHistory = () => {
 
 const TransferRow = (props: { id: number, receiver: string, timestamp: string}) => {
   const address = props.receiver;
-  let url = `https://explorer.testnet.evm.eosnetwork.com/address/${address}`;
+  let url = `https://scan.exactsat.io/address/${address}`;
   if ( address.length <= 12 ) url = `https://jungle4.eosq.eosnation.io/account/${address}`
   const short = sanitizeAddress(address);
   const time = dayjs(props.timestamp + "Z").fromNow();

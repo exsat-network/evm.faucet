@@ -1,4 +1,4 @@
-# `exsat EVM` Faucet
+# `exSat EVM` Faucet
 
 ## Quickstart
 
@@ -12,11 +12,11 @@ $ npm run dev
 - [x] Faucet logo design
 - [x] User input address
   - [x] Regex validation
-  - [x] exsat native address
+  - [x] exSat native address
   - [x] EVM address
 - [x] Send BTC transfers (via internal API)
   - [x] EVM (via bridge `evm.xsat`)
-  - [x] exsat native
+  - [x] exSat native
   - [x] Success Notification
 - [x] History of last 10 faucet transactions
 - [x] Rate limit based on cookies (1 request per second)
