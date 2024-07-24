@@ -14,14 +14,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-    <head>
-        <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-        <meta name="google-site-verification" content="IiJqa5EsAcb2Go6AzN_FrKNPxlousZXI0YKPKCQ8CAw" />
-        <link rel="icon" href="/icon.png" />
-    </head>
-    <body>
-      {children}
-    </body>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <meta
+          name="google-site-verification"
+          content="IiJqa5EsAcb2Go6AzN_FrKNPxlousZXI0YKPKCQ8CAw"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
+      <body>{children}</body>
     </html>
-  )
+  );
 }
