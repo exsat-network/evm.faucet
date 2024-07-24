@@ -44,8 +44,8 @@ export const TransferHistory = () => {
 
 const TransferRow = (props: { id: number, receiver: string, timestamp: string}) => {
   const address = props.receiver;
-  let url = `https://explorer.testnet.evm.eosnetwork.com/address/${address}`;
-  if ( address.length <= 12 ) url = `https://jungle4.eosq.eosnation.io/account/${address}`
+  let url = `https://scan.exsat.network/address/${address}`;
+  if ( address.length <= 12 ) url = `https://local.bloks.io/account/${address}?nodeUrl=https%3A%2F%2Fexsat3.greymass.com&systemDomain=eosio`;
   const short = sanitizeAddress(address);
   const time = dayjs(props.timestamp + "Z").fromNow();
   return (

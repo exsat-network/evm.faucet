@@ -3,6 +3,7 @@
 ## Quickstart
 
 ```
+$ npm install --save-exact react@rc react-dom@rc
 $ npm install
 $ npm run dev
 ```

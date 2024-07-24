@@ -1,5 +1,5 @@
 import { AnyAction } from "@wharfkit/session"
-import { ACCOUNT } from "./constants"
+import { ACCOUNT ,FAUCET} from "./constants"
 import { authorization } from "./config"
 
 export const send = (to: string): AnyAction => {
@@ -10,6 +10,20 @@ export const send = (to: string): AnyAction => {
         data: {
             to,
         },
+    }
+}
+export const sendBtc = (to: string): AnyAction => {
+    // @ts-ignore
+    return {
+      account: "btc.xsat",
+      name: "transfer",
+      authorization,
+      data: {
+        from: FAUCET,
+        to: "evm.xsat",
+        quantity: "1.00000000 BTC",
+        memo: to,
+      },
     }
 }
 
