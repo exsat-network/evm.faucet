@@ -47,19 +47,25 @@ export const Faucet = () => {
       </Text>
       <Stack marginTop="20px" maxWidth="2xl" width="100%">
         <Input
-          variant="filled"
+          bg="#2a2a2a"
+          color="white"
+          borderColor="#4a4a4a"
+          _placeholder={{ color: "#8a8a8a" }}
+          _hover={{ borderColor: "#5a5a5a" }}
+          _focus={{
+            borderColor: "#ff8c00",
+            boxShadow: "0 0 0 1px #ff8c00",
+          }}
           placeholder={placeholder}
           value={walletAddress}
           onChange={handleOnChange}
         />
         <Stack direction="row">
-          <SendButton walletAddress={walletAddress}>
-            Send
-          </SendButton>
+          <SendButton walletAddress={walletAddress}>Send</SendButton>
         </Stack>
-        <SimpleGrid columns={2} spacingX='40px'>
+        <SimpleGrid columns={2} spacingX="40px">
           <Balance address={walletAddress} />
-          <Box w='100%'>
+          <Box w="100%">
             <Center height={"40px"}>
               <Telegram />
               <GitHub />

@@ -19,7 +19,7 @@ function Navbar({}: Props) {
             <Image
               width={100}
               height={100}
-              src="/exsat_logo.svg"
+              src="/exsat.svg"
               alt="exSat EVM Testnet"
             />
           </Link>

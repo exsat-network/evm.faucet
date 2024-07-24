@@ -4,8 +4,8 @@ import useSWR from "swr";
 import { Box } from "@chakra-ui/react"
 import { get_balance } from "../api/tables";
 import Link from "next/link";
-import { useRecoilValue } from "recoil";
-import { chainState } from "../atoms";
+
+const chain = "testnet3";
 
 export const Balance = (props: {address: string}) => {
     // const chain = useRecoilValue(chainState);

@@ -11,7 +11,7 @@ export const Twitter = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Image alt="Twitter" src="/twitter.svg" width={30} height={30} />
+      <Image alt="Twitter" src="/twitter-dark.svg" width={30} height={30} />
     </Link>
   </Box>
 );

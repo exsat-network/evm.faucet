@@ -11,7 +11,7 @@ export const GitHub = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Image alt="GitHub" src="/github.svg" width={30} height={30} />
+      <Image alt="GitHub" src="/github-dark.svg" width={30} height={30} />
     </Link>
   </Box>
-)
+);

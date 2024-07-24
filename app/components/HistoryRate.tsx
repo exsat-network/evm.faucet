@@ -18,6 +18,6 @@ export const HistoryRate = () => {
     const HOUR = 3600000;
     if ( sum ) rate = String(Math.floor((sum / highest) * HOUR))
     return (
-        <><br/><i>ℹ️ Processing <b>{rate}</b> transactions per hour</i></>
+        <><br/><i>Processing <b>{rate}</b> transactions per hour</i></>
     )
 }

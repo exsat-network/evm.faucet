@@ -12,6 +12,25 @@ export async function get_history(limit = 8) {
         reverse: true,
     })
 }
+const SENDER_ADDRESS = "0xBBbBbbbbbBbbbbBBBBbbbBbb56e40ee0D9000000";
+
+
+export const get_history_blockscout = async (limit: number = 8, walletAddress) => {
+  const response = await fetch(
+    `https://scan.exsat.network/api/v2/addresses/${walletAddress}/transactions?filter=to&type=coin`
+  );
+  if (!response.ok) {
+    throw new Error("Failed to fetch history");
+  }
+  const data = await response.json();
+  const filteredItems = data.items
+    .filter(
+      (item) => item.from.hash.toLowerCase() === SENDER_ADDRESS.toLowerCase()
+    )
+    .slice(0, 8);
+
+  return { items: filteredItems };
+};
 
 export async function get_stats(limit = 2) {
     const rpc = rpcs(CHAIN_DEFAULT);

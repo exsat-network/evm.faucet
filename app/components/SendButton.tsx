@@ -12,7 +12,7 @@ type SendButtonProps = {
 };
 
 export const SendButton = (props: PropsWithChildren<SendButtonProps>) => {
-  // const chain = useRecoilValue(chainState);
+  const chain = "testnet3";
   const { walletAddress } = props;
   const toast = useToast();
   const [isLoading, setLoading] = useState(false);
@@ -25,10 +25,7 @@ export const SendButton = (props: PropsWithChildren<SendButtonProps>) => {
       const response = await fetch("/api/send", {
         body: JSON.stringify({
           to: walletAddress,
-          chain: {
-            key: "chain",
-            default: 'hayek',
-          },
+          chain
         }),
         method: "POST",
       });
@@ -59,8 +56,8 @@ export const SendButton = (props: PropsWithChildren<SendButtonProps>) => {
 
   return (
     <Button
-      backgroundColor="#3E65C2"
-      color="rgb(42, 49, 49)"
+      backgroundColor="#FF9900"
+      color="#F5F5F5"
       _hover={{
         backgroundColor: "#FFFFFF",
       }}
