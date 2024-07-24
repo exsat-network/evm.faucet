@@ -107,7 +107,7 @@ export const Faucet = () => {
           </SimpleGrid>
         </Stack>
       </Box>
-      <Box padding="20px" maxHeight="100vh" overflow="auto">
+      <Box padding="20px" maxHeight="100vh" overflow="auto" maxW={"100vw"} marginBottom={"10vh"}>
         <Heading size="lg" marginBottom="20px">
           Transfer History
         </Heading>
