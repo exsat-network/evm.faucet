@@ -1,10 +1,11 @@
 import './globals.css'
 
 export const metadata = {
-    title: 'exSat EVM: Get Free Balance on the exSat EVM Network Testnet',
-    description: 'exSat EVM provides free balance on the exSat network in testnet. We offer balance to allow our users to test and develop on the exSat network more.',
-    keywords: 'exSat, EVM, faucet, testnet, balance, free, exSat',
-}
+  title: "exSat Faucet",
+  description:
+    "exSat faucet is an application that dispenses free tokens on exSat Testnet, a blockchain network used for development and testing. These tokens enable you to experiment with transactions, deploy smart contracts, and explore network behavior without risking real assets.",
+  keywords: "exSat, EVM, faucet, testnet, balance, free, exSat",
+};
 
 export default function RootLayout({
   children,
