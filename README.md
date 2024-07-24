@@ -9,7 +9,7 @@ $ npm run dev
 
 
 or
-
+yarn build
 pm2 start yarn --name "evm_faucet" --interpreter bash -- start 
 ```
 
