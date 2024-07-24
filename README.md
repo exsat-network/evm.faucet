@@ -1,6 +1,4 @@
-# `EOS EVM` Faucet
-
-<img width="1223" alt="image" src="https://user-images.githubusercontent.com/550895/229628495-5075dcfa-50b2-4b10-b07e-21c959d68052.png">
+# `exsat EVM` Faucet
 
 ## Quickstart
 
@@ -14,11 +12,11 @@ $ npm run dev
 - [x] Faucet logo design
 - [x] User input address
   - [x] Regex validation
-  - [x] EOS address
+  - [x] exsat native address
   - [x] EVM address
-- [x] Send EOS transfers (via internal API)
-  - [x] EVM (via bridge `eosio.evm`)
-  - [x] EOS
+- [x] Send BTC transfers (via internal API)
+  - [x] EVM (via bridge `evm.xsat`)
+  - [x] exsat native
   - [x] Success Notification
 - [x] History of last 10 faucet transactions
 - [x] Rate limit based on cookies (1 request per second)
