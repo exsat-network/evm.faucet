@@ -17,7 +17,7 @@ const SENDER_ADDRESS = "0xBBbBbbbbbBbbbbBBBBbbbBbb56e40ee0D9000000";
 
 export const get_history_blockscout = async (limit: number = 8, walletAddress) => {
   const response = await fetch(
-    `https://scan.exsat.network/api/v2/addresses/${walletAddress}/transactions?filter=to&type=coin`
+    `https://scan-testnet.exsat.network/api/v2/addresses/${walletAddress}/transactions?filter=to&type=coin`
   );
   if (!response.ok) {
     throw new Error("Failed to fetch history");

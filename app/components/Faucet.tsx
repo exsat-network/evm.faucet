@@ -169,7 +169,7 @@ const TransferRow = (props: {
   status: string;
 }) => {
   const address = props?.hash || "Unknown";
-  const url = `https://scan.exsat.network/address/${address}`;
+  const url = `https://scan-testnet.exsat.network/address/${address}`;
   const short = sanitizeAddress(address);
   const time = props.timestamp ? dayjs(props.timestamp).fromNow() : "Unknown";
   const value = props.value

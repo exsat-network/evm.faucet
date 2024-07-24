@@ -11,7 +11,7 @@ function Navbar({}: Props) {
       <div className="nav-content contained">
         <div className="flex">
           <Link
-            href="https://scan.exsat.network/"
+            href="https://scan-testnet.exsat.network/"
             target="_blank"
             rel="noreferrer"
             className="v-align-center"

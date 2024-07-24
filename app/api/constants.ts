@@ -9,7 +9,7 @@ export const CHAINS = {
   testnet3: {
     id: "20d14b6e421fe21ef1f39061e70f214d5d908b979f379a4feea04294944ddd92",
     url: "https://chain-tst3.exsat.network/",
-    explorer: "https://scan.exsat.network/",
+    explorer: "https://scan-testnet.exsat.network/",
   },
 };
 export const CHAIN_DEFAULT = "testnet3";
