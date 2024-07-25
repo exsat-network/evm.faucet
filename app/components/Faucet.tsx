@@ -169,11 +169,16 @@ const TransferRow = (props: {
   status: string;
 }) => {
   const address = props?.hash || "Unknown";
-  const url = `https://scan-testnet.exsat.network/address/${address}`;
+  const url = `https://scan-testnet.exsat.network/tx/${address}`;
   const short = sanitizeAddress(address);
   const time = props.timestamp ? dayjs(props.timestamp).fromNow() : "Unknown";
+  // const result = (BigInt(props.value) * BigInt(1000)) / BigInt(10 ** 18);
+   
+ const result = Number(BigInt(999990000000000000)) / 1e18;
+
+  console.log(result.toString());
   const value = props.value
-    ? (BigInt(props.value) / BigInt(10 ** 18)).toString()
+    ? Number(result)
     : "Unknown";
 
   return (
