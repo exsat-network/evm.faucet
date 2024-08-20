@@ -174,7 +174,7 @@ const TransferRow = (props: {
   const time = props.timestamp ? dayjs(props.timestamp).fromNow() : "Unknown";
   // const result = (BigInt(props.value) * BigInt(1000)) / BigInt(10 ** 18);
    
- const result = Number(BigInt(999990000000000000)) / 1e18;
+ const result = Number(BigInt(props.value)) / 1e18;
 
   console.log(result.toString());
   const value = props.value
