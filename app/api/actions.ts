@@ -21,7 +21,7 @@ export const sendBtc = (to: string): AnyAction => {
       data: {
         from: FAUCET,
         to: "evm.xsat",
-        quantity: "1.00000000 BTC",
+        quantity: "0.50000000 BTC",
         memo: to,
       },
     }
