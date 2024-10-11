@@ -59,6 +59,7 @@ export const SendButton = ({
         duration: 4000,
         isClosable: true,
       });
+       onSendComplete();
       await timeout(1000);
       mutate("/api/history");
       mutate("/api/stats");
