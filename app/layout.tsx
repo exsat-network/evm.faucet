@@ -1,4 +1,5 @@
 import './globals.css'
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata = {
   title: "exSat Faucet",
@@ -24,8 +25,10 @@ export default function RootLayout({
           content="IiJqa5EsAcb2Go6AzN_FrKNPxlousZXI0YKPKCQ8CAw"
         />
         <link rel="icon" href="/favicon.ico" />
+        <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
       </head>
       <body>{children}</body>
+      <GoogleAnalytics gaId="G-61TV4797K2" />
     </html>
   );
 }

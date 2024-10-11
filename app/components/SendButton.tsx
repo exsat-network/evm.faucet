@@ -9,23 +9,43 @@ import { timeout } from "../api/utils";
 
 type SendButtonProps = {
   walletAddress: string;
+  hcaptchaToken: string;
+  onSendComplete: () => void;
+  children: React.ReactNode;
 };
 
-export const SendButton = (props: PropsWithChildren<SendButtonProps>) => {
+export const SendButton = ({
+  walletAddress,
+  hcaptchaToken,
+  onSendComplete,
+  children,
+}: SendButtonProps) => {
   const chain = "testnet3";
-  const { walletAddress } = props;
   const toast = useToast();
   const [isLoading, setLoading] = useState(false);
   const { mutate } = useSWRConfig();
 
   const onSubmit = async () => {
-    if ( isLoading ) return;
+    if (isLoading) return;
+
+    if (!hcaptchaToken) {
+      toast({
+        title: "Error",
+        description: "Please complete the hCaptcha verification",
+        status: "error",
+        duration: 4000,
+        isClosable: true,
+      });
+      return;
+    }
+
     setLoading(true);
     try {
       const response = await fetch("/api/send", {
         body: JSON.stringify({
           to: walletAddress,
-          chain
+          chain,
+          hcaptchaToken: hcaptchaToken,
         }),
         method: "POST",
       });
@@ -37,9 +57,9 @@ export const SendButton = (props: PropsWithChildren<SendButtonProps>) => {
         description: `BTC sent to ${sanitizeAddress(walletAddress)}`,
         status: "success",
         duration: 4000,
-        isClosable: true
+        isClosable: true,
       });
-      await timeout(1000)
+      await timeout(1000);
       mutate("/api/history");
       mutate("/api/stats");
       mutate(`/api/balance/${chain}/${walletAddress}`);
@@ -58,17 +78,15 @@ export const SendButton = (props: PropsWithChildren<SendButtonProps>) => {
     <Button
       backgroundColor="#FF9900"
       color="#F5F5F5"
-      _hover={{
-        backgroundColor: "#FFFFFF",
-      }}
+      _hover={{ bg: "#e67e00" }}
       onClick={onSubmit}
       flex="1"
       textTransform="uppercase"
       fontWeight="bold"
       isLoading={isLoading}
-      disabled={!walletAddress || isLoading}
+      disabled={!walletAddress || isLoading || !hcaptchaToken}
     >
-      {props.children}
+      {children}
     </Button>
   );
 };

@@ -18,7 +18,7 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import { ChangeEvent, useState, useEffect } from "react";
+import { ChangeEvent, useState, useEffect, useRef } from "react";
 import { GitHub } from "./Github";
 import { SendButton } from "./SendButton";
 import { Balance } from "./Balance";
@@ -30,11 +30,14 @@ import { sanitizeAddress } from "../api/utils";
 import Link from "next/link";
 import { get_history_blockscout } from "../api/tables";
 import relativeTime from "dayjs/plugin/relativeTime";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 dayjs.extend(relativeTime);
 
 export const Faucet = () => {
   const [walletAddress, setWalletAddress] = useState("");
+   const [hcaptchaToken, setHcaptchaToken] = useState("");
+   const hcaptchaRef = useRef<HCaptcha>(null);
   const placeholder = "0x....";
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -45,6 +48,10 @@ export const Faucet = () => {
 
   const isValidEthereumAddress = (address: string) => {
     return /^0x[a-fA-F0-9]{40}$/.test(address);
+  };
+
+  const handleVerificationSuccess = (token: string) => {
+    setHcaptchaToken(token);
   };
 
   const { data, error, isLoading } = useSWR(
@@ -92,8 +99,25 @@ export const Faucet = () => {
             value={walletAddress}
             onChange={handleOnChange}
           />
+          <Box mx={"auto"}>
+            <HCaptcha
+              sitekey="ea10b238-9e70-4974-ab3c-326a7fe0d0c6"
+              onVerify={handleVerificationSuccess}
+              ref={hcaptchaRef}
+            />
+          </Box>
+
           <Stack direction="row">
-            <SendButton walletAddress={walletAddress}>Send</SendButton>
+            <SendButton
+              walletAddress={walletAddress}
+              hcaptchaToken={hcaptchaToken}
+              onSendComplete={() => {
+                setHcaptchaToken("");
+                hcaptchaRef.current?.resetCaptcha();
+              }}
+            >
+              Send
+            </SendButton>
           </Stack>
           <SimpleGrid columns={2} spacingX="40px">
             <Balance address={walletAddress} />
@@ -107,7 +131,13 @@ export const Faucet = () => {
           </SimpleGrid>
         </Stack>
       </Box>
-      <Box padding="20px" maxHeight="100vh" overflow="auto" maxW={"100vw"} marginBottom={"10vh"}>
+      <Box
+        padding="20px"
+        maxHeight="100vh"
+        overflow="auto"
+        maxW={"100vw"}
+        marginBottom={"10vh"}
+      >
         <Heading size="lg" marginBottom="20px">
           Transfer History
         </Heading>
