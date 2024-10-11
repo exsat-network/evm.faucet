@@ -11,8 +11,9 @@ export const revalidate = 1;
 
 const CLAIMS_FILE = path.join(process.cwd(), "claims.json");
 
-const HCAPTCHA_SECRET_KEY = "ES_c4f2bbd7b1964b6484d0cb964f6df3be";
-
+const HCAPTCHA_SECRET_KEY = process.env.HCAPTCHA_SECRET_KEY;
+if (!process.env.HCAPTCHA_SECRET_KEY)
+  throw new Error("HCAPTCHA_SECRET_KEY is required");
 interface ClaimRecord {
   lastClaim: number;
   count: number;
