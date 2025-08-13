@@ -199,7 +199,7 @@ const TransferRow = (props: {
   status: string;
 }) => {
   const address = props?.hash || "Unknown";
-  const url = `https://scan-testnet.exsat.network/tx/${address}`;
+  const url = `https://scan2.exactsat.io/tx/${address}`;
   const short = sanitizeAddress(address);
   const time = props.timestamp ? dayjs(props.timestamp).fromNow() : "Unknown";
   // const result = (BigInt(props.value) * BigInt(1000)) / BigInt(10 ** 18);

@@ -7,7 +7,7 @@ import "./Footer.scss";
 import Chain from "./Chain";
 
 export default function Footer() {
-  const currentChain = "testnet3"
+  const currentChain = "testnet2"
   // const currentChain = useRecoilValue(chainState);
 
   return (

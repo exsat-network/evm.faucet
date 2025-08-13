@@ -20,7 +20,7 @@ export const SendButton = ({
   onSendComplete,
   children,
 }: SendButtonProps) => {
-  const chain = "testnet3";
+  const chain = "testnet2";
   const toast = useToast();
   const [isLoading, setLoading] = useState(false);
   const { mutate } = useSWRConfig();

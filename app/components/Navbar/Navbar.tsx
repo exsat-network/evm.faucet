@@ -11,7 +11,7 @@ function Navbar({}: Props) {
       <div className="nav-content contained">
         <div className="flex">
           <Link
-            href="https://scan-testnet.exsat.network/"
+            href="https://scan2.exactsat.io/"
             target="_blank"
             rel="noreferrer"
             className="v-align-center"
@@ -20,7 +20,7 @@ function Navbar({}: Props) {
               width={100}
               height={100}
               src="/exsat.svg"
-              alt="exSat EVM Testnet"
+              alt="exSat EVM Testnet2"
             />
           </Link>
         </div>
