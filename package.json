@@ -20,8 +20,8 @@
     "dayjs": "1.x",
     "framer-motion": "^11.3.12",
     "nextjs-google-analytics": "latest",
-    "react": "19.0.0-canary-fd0da3eef-20240404",
-    "react-dom": "19.0.0-canary-fd0da3eef-20240404",
+    "react": "19.0.3",
+    "react-dom": "19.0.3",
     "recoil": "latest",
     "sass": "^1.77.8",
     "swr": "latest"
