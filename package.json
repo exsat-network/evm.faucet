@@ -16,7 +16,7 @@
     "@next/third-parties": "^14.2.15",
     "@wharfkit/session": "latest",
     "@wharfkit/wallet-plugin-privatekey": "latest",
-    "axios": "^1.7.7",
+    "axios": "^1.13.2",
     "dayjs": "1.x",
     "framer-motion": "^11.3.12",
     "nextjs-google-analytics": "latest",
@@ -30,7 +30,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "next": "canary",
+    "next": "16.1.0-canary.20",
     "typescript": "latest"
   }
 }
