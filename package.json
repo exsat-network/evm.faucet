@@ -8,7 +8,10 @@
     "start": "next start -p 7777"
   },
   "overrides": {
-    "elliptic": "^6.6.1"
+    "elliptic": "^6.6.1",
+    "react": "19.0.3",
+    "react-dom": "19.0.3",
+    "next": "$next"
   },
   "dependencies": {
     "@chakra-ui/icons": "latest",
